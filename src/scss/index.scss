@@ -1,1 +1,28 @@
 @import url('./_cdn.scss');
+@import url('./header.scss');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: 0;
+    outline-offset: 0;
+    background: transparent;
+}
+
+html{
+    font-family: "Raleway", "Open+Sans", sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+header{
+    
+}
