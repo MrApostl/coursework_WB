@@ -1,0 +1,146 @@
+.header-wrapper{
+    background-image: linear-gradient(to right, rgba(191,34,225,1), rgba(102,0,255,1));
+    border-radius: 0%  0% 50px 50px;
+    padding: 10px 20px;
+    color: rgb(218, 218, 218);
+}
+
+//Верхняя часть header
+
+.header-wrapper__top{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-bottom: 20px;
+}
+
+.header-wrapper__top__links{
+    display: flex;
+}
+
+.header-wrapper__top__links__link{
+    margin-right: 10px;
+    a{
+        color: rgb(218, 218, 218);
+        transition: 0.5s;
+        &:hover{
+            transition: 0.5s;
+            color: white;
+        }
+    }
+}
+
+.header-wrapper__top__controls{
+    display: flex;
+}
+
+.header-wrapper__top__controls__control{
+    margin-left: 10px;
+}
+
+.header-wrapper__top__controls__control__map{
+
+}
+
+.header-wrapper__top__controls__control__location{
+
+}
+
+.header-wrapper__top__controls__control{
+
+}
+
+.header-wrapper__top__controls__control__global{
+
+}
+
+.header-wrapper__top__controls__control__currency{
+
+}
+
+//Нижняя часть header
+
+.header-wrapper__bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.header-wrapper__bottom__logo{
+    width: 20%;
+    margin-right: 10px;
+    a{
+        font-family: "Open+Sans";
+        font-size: 3.125rem;
+        color: white;
+    }
+}
+
+.header-wrapper__bottom__search{
+    display: flex;
+    width: 55%;
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.header-wrapper__bottom__search__btn{
+    width: 10%;
+    background-color: rgb(240, 240, 240);
+    color: rgba(191,34,225,1);
+    font-size: 1.5rem;
+    transition: 0.5s;
+    &:hover{
+        cursor: pointer;
+        background-color: rgb(226, 226, 226);
+        transition: 0.5s;
+    }
+}
+
+.header-wrapper__bottom__search__input{
+    width: 90%;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+
+.header-wrapper__bottom__menu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20%;
+    margin-left: 10px;
+    padding: -5px;
+}
+
+.header-wrapper__bottom__menu__elem{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5px;
+    width: 30%;
+}
+
+.header-wrapper__bottom__menu__elem__btn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    color: white;
+    transition: 0.5s;
+    i{
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    &:hover{
+        cursor: pointer;
+        transition: 0.5s;
+        background-color: rgba(191,34,225,0.2);
+        border-radius: 15px;
+    }
+}
+
+.header-wrapper__bottom__menu__shopping__text{
+    font-size: 1rem;
+}
+
