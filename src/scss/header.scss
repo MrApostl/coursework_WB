@@ -20,10 +20,12 @@
 
 .header-wrapper__top__links__link{
     margin-right: 10px;
-    a{
+    button{
         color: rgb(218, 218, 218);
         transition: 0.5s;
+        
         &:hover{
+            cursor: pointer;
             transition: 0.5s;
             color: white;
         }
@@ -138,6 +140,11 @@
         background-color: rgba(191,34,225,0.2);
         border-radius: 15px;
     }
+
+}
+
+.add{
+    display: none;
 }
 
 .header-wrapper__bottom__menu__shopping__text{
