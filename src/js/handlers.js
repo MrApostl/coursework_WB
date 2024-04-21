@@ -26,4 +26,13 @@ const clickOnAddCloseCard = (event) =>{
     elemBtnFormAdd.style.display = (elemBtnFormAdd.style.display === "none") ? "block" : "none";
 }
 
-export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard}
+const elemBtnFormBasket = document.querySelector('.main-basket');
+
+const clickOnAddClosebasket = (event) =>{
+    event.preventDefault();
+
+    
+    elemBtnFormBasket.style.display = (elemBtnFormBasket.style.display === "none") ? "block" : "none";
+}
+
+export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket}
