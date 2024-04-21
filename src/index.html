@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./scss/index.scss">
     <title>Wildberries 2.0</title>
 </head>
@@ -40,33 +41,34 @@
                     </div>
                     <ul class="header-wrapper__bottom__menu">
                         <li class="header-wrapper__bottom__menu__elem">
-                            <button class="header-wrapper__bottom__menu__elem__btn sign">
-                                <i class="fa-solid fa-user"></i>
-                                <span class="header-wrapper__bottom__menu__shopping__text">Вход</span>
-                            </button>
-                        </li>
-                        <li class="header-wrapper__bottom__menu__elem">
-                            <button class="header-wrapper__bottom__menu__elem__btn settings">
-                                <i class="fa-solid fa-gear"></i>
-                                <span class="header-wrapper__bottom__menu__shopping__text">Настройки</span>
-                            </button>
-                        <li class="header-wrapper__bottom__menu__elem">
                             <button class="header-wrapper__bottom__menu__elem__btn basket">
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span class="header-wrapper__bottom__menu__shopping__text">Корзина</span>
                             </button>
-                        </li>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+    <div class="carousel">
+        <div class="container">
+            <div class="carousel-wrapper swiper">
+                <div class="carousel-wrapper_list swiper-wrapper">
+                    <div class="carousel-wrapper_list_elem swiper-slide"><img src="img/last_2704_2004.jpg"></div>
+                    <div class="carousel-wrapper_list_elem swiper-slide"><img src="img/sklad_2704_by.jpg"></div>
+                    <div class="carousel-wrapper_list_elem swiper-slide"><img src="img/wild_2704_2004.jpg"></div>
+                </div>   
+                <div class="carousel-wrapper_arrow swiper-button-next">
+                </div>
+                <div class="carousel-wrapper_arrow swiper-button-prev">
+                </div>
+            </div>
+        </div>
+    </div>    
     <main>
-
     </main>
-    <footer>
 
-    </footer>
+    <script src="./js/index.js" type="module"></script>
 </body>
 </html>

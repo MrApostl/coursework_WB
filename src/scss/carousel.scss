@@ -1,0 +1,28 @@
+.carousel-wrapper{
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.carousel-wrapper_list{
+
+}
+
+.carousel-wrapper_arrow{
+  color: rgba(102,0,255,1);
+  transition: 0.5s;
+
+  &:hover{
+    transition: 0.5s;
+    color: rgba(191,34,225,1);
+  }
+}
+
+.carousel-wrapper_list_elem{
+
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
+}

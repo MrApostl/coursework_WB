@@ -1,5 +1,6 @@
 @import url('./_cdn.scss');
 @import url('./header.scss');
+@import url('./carousel.scss');
 
 *{
     margin: 0;
@@ -24,5 +25,9 @@ html{
 }
 
 header{
-    
+    margin-bottom: 50px;
+}
+
+.carousel{
+    margin-bottom: 50px;
 }
