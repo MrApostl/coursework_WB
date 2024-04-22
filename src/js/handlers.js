@@ -1,5 +1,6 @@
 import { getDate, setDate, removeDate } from './webStorageAPI.js';
 import { getUniqId, getRoundNum } from './math.js';
+import { renderMain } from './dom.js';
 
 const elemBtnAdd = document.querySelector('.add');
 
@@ -69,4 +70,28 @@ const clickOnAddClosebasket = (event) =>{
     elemBtnFormBasket.style.display = (elemBtnFormBasket.style.display === 'none') ? 'block' : 'none';
 }
 
-export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard}
+const clickOnSearch = (event) =>{
+    event.preventDefault();
+
+    const elemBtnDelMas = document.getElementsByClassName('main-card-bottom_btnDel');
+    elemBtnAdd.style.display = 'none';
+    for (let i = 0; i < elemBtnDelMas.length; i++) {
+        elemBtnDelMas[i].style.display = 'none';
+    }
+
+    renderMain();
+}
+
+const ChangeSearch = (event) =>{
+    const elemBtnDelMas = document.getElementsByClassName('main-card-bottom_btnDel');
+    elemBtnAdd.style.display = 'none';
+    for (let i = 0; i < elemBtnDelMas.length; i++) {
+        elemBtnDelMas[i].style.display = 'none';
+    }
+
+    renderMain();
+}
+
+
+
+export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch}

@@ -1,7 +1,9 @@
-import {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard} from './handlers.js'
+import {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch} from './handlers.js'
 import { getDate } from './webStorageAPI.js';
 
 const mainWrapperElem = document.querySelector('.main-wrapper');
+const elemSearch = document.querySelector('.header-wrapper__bottom__search__input');
+const elemBtnSearch = document.querySelector('.header-wrapper__bottom__search__btn');
 
 const installHandle = () =>{
     const elemBtnSeller = document.querySelector('.header-wrapper__top__links__link_seller');
@@ -32,6 +34,10 @@ const installHandle = () =>{
     
     elemBtnOpenBasket.addEventListener('click', clickOnAddClosebasket);
     elemBtnCloseBasket.addEventListener('click', clickOnAddClosebasket);
+    
+    //Поиск
+    elemBtnSearch.addEventListener('click', clickOnSearch); 
+    elemSearch.addEventListener('change', ChangeSearch);
 }
 
 const renderCard = (card) =>{
@@ -127,8 +133,17 @@ const renderMain = () =>{
     //card
     const masCards = getDate('cards');
 
-    for(let i = 0; i < masCards.length; i++){
-        renderCard(masCards[i]);
+    if(!elemSearch.value){
+        for(let i = 0; i < masCards.length; i++){
+            renderCard(masCards[i]);
+        }
+    }else{
+        for(let i = 0; i < masCards.length; i++){
+            if(masCards[i].title.includes(elemSearch.value))
+            {
+                renderCard(masCards[i]);
+            }
+        }
     }
 }
 
