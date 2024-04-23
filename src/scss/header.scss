@@ -20,10 +20,12 @@
 
 .header-wrapper__top__links__link{
     margin-right: 10px;
-    a{
+    button{
         color: rgb(218, 218, 218);
         transition: 0.5s;
+        
         &:hover{
+            cursor: pointer;
             transition: 0.5s;
             color: white;
         }
@@ -67,7 +69,7 @@
 }
 
 .header-wrapper__bottom__logo{
-    width: 20%;
+    width: 25%;
     margin-right: 10px;
     a{
         font-family: "Open+Sans";
@@ -78,7 +80,7 @@
 
 .header-wrapper__bottom__search{
     display: flex;
-    width: 55%;
+    width: 50%;
     overflow: hidden;
     border-radius: 50px;
     background-color: white;
@@ -138,6 +140,11 @@
         background-color: rgba(191,34,225,0.2);
         border-radius: 15px;
     }
+
+}
+
+.add{
+    display: none;
 }
 
 .header-wrapper__bottom__menu__shopping__text{

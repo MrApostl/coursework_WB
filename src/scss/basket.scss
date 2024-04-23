@@ -1,0 +1,134 @@
+.main-basket{
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
+    width: 70%;
+    padding: 20px;
+    border: 1px solid rgba(102,0,255,1);
+    border-radius: 20px;
+    overflow-y: scroll;
+    margin: 10px 10px 0;
+    max-height: 90%;
+    display: none;
+}
+
+.basket-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.basket-wrapper-left{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.basket-wrapper-right{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.basket-wrapper-right_close{
+    background-color: rgba(191,34,225,1);
+    width: 30%;
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    transition: 0.5s;
+    margin-bottom: 10px;
+    
+    &:hover{
+        transition: 0.5s;
+        background-color: rgba(102,0,255,1);
+        cursor: pointer;
+    }
+}
+
+.basket-wrapper-left-card{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 5px 30px;
+}
+
+.basket-wrapper-left-card-top{
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 110px;
+    height: 110px;
+    img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.basket-wrapper-left-card-top_sale{
+    padding: 3px 5px;
+    background-color: white;
+    border: 2px solid rgba(191,34,225,1);
+    border-radius: 25%;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.basket-wrapper-left-card-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.basket-wrapper-left-card-bottom_price{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.basket-wrapper-left-card-bottom_price_currency{
+    font-size: 1rem;
+}
+
+.basket-wrapper-left-card-bottom_price_sale{
+    font-size: 1rem;
+    color: gray;
+    text-decoration: line-through
+}
+
+.basket-wrapper-left-card-bottom_title{
+    margin-bottom: 10px;
+}
+
+.basket-wrapper-left-card-bottom_btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.basket-wrapper-left-card-bottom_btnDel{
+    background-color: rgba(191,34,225,1);
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    transition: 0.5s;
+    
+    &:hover{
+        transition: 0.5s;
+        background-color: rgba(102,0,255,1);
+        cursor: pointer;
+    }
+}
+
+.basket-wrapper-left-card-bottom_buy{
+
+}

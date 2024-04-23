@@ -8,16 +8,69 @@
     <title>Wildberries 2.0</title>
 </head>
 <body>
+    <form action="" class="add-card" name="add-card">
+        <div class="add-card_picture">
+            <label for="src">Картинка</label>
+            <input type="text" name="src" id="src" required>
+        </div>
+        <div class="add-card_title">
+            <label for="title">Название</label>
+            <input type="text" name="title" id="title" required>
+        </div>
+        <div class="add-card_price">
+            <label for="price">Цена</label>
+            <input type="text" name="price" id="price" required>
+        </div>
+        <div class="add-card_sale">
+            <label for="sale">Скидка</label>
+            <input type="text" name="sale" id="sale">
+        </div>
+        <div class="add-card_btn">
+            <button class="add-card_btn_add" type="submit">Добавить</button>
+            <button class="add-card_btn_close">X</button>
+        </div>
+    </form>
+    <div class="main-basket">
+        <div class="basket-wrapper">
+            <div class="basket-wrapper-left">
+                <!-- <div class="basket-wrapper-left-card">
+                    <div class="basket-wrapper-left-card-top">
+                        <img src="https://filizhanka.com/images/products/products/20230719-1340541-big.jpg" alt="">
+                    </div>
+                    <div class="basket-wrapper-left-card-bottom">
+                        <div class="basket-wrapper-left-card-bottom_price">
+                            40,24 <span class="basket-wrapper-left-card-bottom_price_currency">р.</span>
+                        </div>
+                        <div class="basket-wrapper-left-card-bottom_title">
+                            Чайник
+                        </div>
+                        <div class="basket-wrapper-left-card-bottom_btn">
+                            <button class="basket-wrapper-left-card-bottom_btnDel">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="basket-wrapper-right">
+                <button class="basket-wrapper-right_close">X</button>
+                <div class="basket-wrapper-right_info">
+                    Сумма к оплате: <span class="basket-wrapper-right_sum">0</span><span class="basket-wrapper-right_currency"> р.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="header-wrapper">
                 <div class="header-wrapper__top">
                     <ul class="header-wrapper__top__links">
                         <li class="header-wrapper__top__links__link">
-                            <a href="#">Стать продавцом</a>
+                            <button class="header-wrapper__top__links__link_seller">Стать продавцом</button>
                         </li>
                         <li class="header-wrapper__top__links__link">
-                            <a href="#">Работать в Wildberries</a>
+                            <button class="header-wrapper__top__links__link_buyer">Стать покупателем</button>
                         </li>
                     </ul>
                     <div class="header-wrapper__top__controls">
@@ -40,6 +93,12 @@
                         <input class="header-wrapper__bottom__search__input" type="text">
                     </div>
                     <ul class="header-wrapper__bottom__menu">
+                        <li class="header-wrapper__bottom__menu__elem">
+                            <button class="header-wrapper__bottom__menu__elem__btn add">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="header-wrapper__bottom__menu__shopping__text">Добавить</span>
+                            </button>
+                        </li>
                         <li class="header-wrapper__bottom__menu__elem">
                             <button class="header-wrapper__bottom__menu__elem__btn basket">
                                 <i class="fa-solid fa-cart-shopping"></i>
@@ -67,6 +126,33 @@
         </div>
     </div>    
     <main>
+        <div class="container">
+            <div class="main-wrapper">
+                <!-- <div class="main-card">
+                    <div class="main-card-top">
+                        <img src="https://filizhanka.com/images/products/products/20230719-1340541-big.jpg" alt="">
+                        <span class="main-card-top_sale">-8%</span>
+                    </div>
+                    <div class="main-card-bottom">
+                        <div class="main-card-bottom_price">
+                            40,24 <span class="main-card-bottom_price_currency">р.</span> <span class="main-card-bottom_price_sale">43,48 р.</span>
+                        </div>
+                        <div class="main-card-bottom_title">
+                            Чайник
+                        </div>
+                    </div>
+                    <div class="main-card-bottom_btn">
+                        <button class="main-card-bottom_btnBuy">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="main-card-bottom_buy">Купить</span>
+                        </button>
+                        <button class="main-card-bottom_btnDel">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
     </main>
 
     <script src="./js/index.js" type="module"></script>
