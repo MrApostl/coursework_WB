@@ -1,9 +1,12 @@
-import {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch} from './handlers.js'
+import {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch, clickOnBuyCard} from './handlers.js'
+import { getRoundNum } from './math.js';
 import { getDate } from './webStorageAPI.js';
 
 const mainWrapperElem = document.querySelector('.main-wrapper');
 const elemSearch = document.querySelector('.header-wrapper__bottom__search__input');
 const elemBtnSearch = document.querySelector('.header-wrapper__bottom__search__btn');
+const basketWrapperElem = document.querySelector('.basket-wrapper'); 
+const basketSumElem = document.querySelector('.basket-wrapper-right_sum'); 
 
 const installHandle = () =>{
     const elemBtnSeller = document.querySelector('.header-wrapper__top__links__link_seller');
@@ -98,6 +101,7 @@ const renderCard = (card) =>{
     //кнопка покупки
     const main_card_bottom_btnBuy = document.createElement('button');
     main_card_bottom_btnBuy.classList.add('main-card-bottom_btnBuy');
+    main_card_bottom_btnBuy.addEventListener('click', clickOnBuyCard);
     main_card_bottom_btn.append(main_card_bottom_btnBuy);
 
     const main_card_bottom_card = document.createElement('i');
@@ -147,4 +151,74 @@ const renderMain = () =>{
     }
 }
 
-export {installHandle, renderCard, renderMain};
+const renderCardBasket = (cardBasket) =>{
+    let {id, src, title, price} = cardBasket;
+
+    const basket_card = document.createElement('div');
+    basket_card.id = id;
+    basket_card.classList.add('basket-wrapper-left-card');
+    
+    //верх карточки
+    const basket_card_top = document.createElement('div');
+    basket_card_top.classList.add('basket-wrapper-left-card-top');
+    basket_card.append(basket_card_top);
+
+    const basket_card_top_img = document.createElement('img');
+    basket_card_top_img.src = src;
+    basket_card_top.append(basket_card_top_img);
+    
+    //низ карточки
+    const basket_card_bottom = document.createElement('div');
+    basket_card_bottom.classList.add('basket-wrapper-left-card-bottom');
+    basket_card.append(basket_card_bottom);
+
+    const basket_card_bottom_price = document.createElement('div');
+    basket_card_bottom_price.classList.add('basket-wrapper-left-card-bottom_price');
+    basket_card_bottom_price.textContent = price;
+    basket_card_bottom.append(basket_card_bottom_price);
+    
+    const basket_card_bottom_price_currency = document.createElement('span');
+    basket_card_bottom_price_currency.classList.add('basket-wrapper-left-card-bottom_price_currency');
+    basket_card_bottom_price_currency.textContent = 'p. '
+    basket_card_bottom_price.append(basket_card_bottom_price_currency);
+
+    const basket_card_bottom_title = document.createElement('div');
+    basket_card_bottom_title.classList.add('basket-wrapper-left-card-bottom_title');
+    basket_card_bottom_title.textContent = title;
+    basket_card_bottom.append(basket_card_bottom_title);
+
+    //кнопки
+    const basket_card_bottom_btn = document.createElement('div');
+    basket_card_bottom_btn.classList.add('basket-wrapper-left-card-bottom_btn');
+    basket_card_bottom.append(basket_card_bottom_btn);
+
+    //кнопка удаления
+    const basket_card_bottom_btnDel = document.createElement('button');
+    basket_card_bottom_btnDel.classList.add('basket-wrapper-left-card-bottom_btnDel');
+    basket_card_bottom_btn.append(basket_card_bottom_btnDel);
+
+    const basket_card_bottom_trash = document.createElement('i');
+    basket_card_bottom_trash.classList.add('fa-solid');
+    basket_card_bottom_trash.classList.add('fa-trash');
+    basket_card_bottom_btnDel.append(basket_card_bottom_trash);
+
+    basketWrapperElem.append(basket_card);
+
+    basketSumElem.textContent = getRoundNum(+basketSumElem.textContent + +price, 2);
+}   
+
+const renderMainBasket = () =>{
+    basketWrapperElem.innerHTML = '';
+
+    //basket
+    const masBasket = getDate('basket');
+    let sum = 0;
+
+    for(let i = 0; i < masBasket.length; i++){
+        renderCardBasket(masBasket[i]);
+        sum += masBasket[i].price; 
+    }
+    basketSumElem.textContent = sum;
+}
+
+export {installHandle, renderCard, renderMain, renderCardBasket, renderMainBasket};

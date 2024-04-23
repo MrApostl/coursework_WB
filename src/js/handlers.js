@@ -62,6 +62,17 @@ const clickOnAddCard = (event) =>{
     elemBtnFormAdd.style.display = 'none';
 }
 
+const clickOnBuyCard = (event) =>{
+    event.preventDefault();
+
+    const elemCard   = event.target.closest('.main-card');
+    const idValue    = elemCard.id;
+    let {src: srcValue, title: titleValue, price: priceValue} = getDate('cards').find(elem => elem.id === +idValue);
+    console.log(srcValue, titleValue, priceValue);
+
+    setDate('basket', {id:idValue, src:srcValue, title:titleValue, price:priceValue});
+}
+
 const elemBtnFormBasket = document.querySelector('.main-basket');
 
 const clickOnAddClosebasket = (event) =>{
@@ -94,4 +105,4 @@ const ChangeSearch = (event) =>{
 
 
 
-export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch}
+export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch, clickOnBuyCard}
