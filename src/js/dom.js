@@ -1,11 +1,11 @@
-import {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch, clickOnBuyCard} from './handlers.js'
+import {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch, clickOnBuyCard, clickOnDeleteBasket} from './handlers.js'
 import { getRoundNum } from './math.js';
 import { getDate } from './webStorageAPI.js';
 
 const mainWrapperElem = document.querySelector('.main-wrapper');
 const elemSearch = document.querySelector('.header-wrapper__bottom__search__input');
 const elemBtnSearch = document.querySelector('.header-wrapper__bottom__search__btn');
-const basketWrapperElem = document.querySelector('.basket-wrapper'); 
+const basketWrapperElem = document.querySelector('.basket-wrapper-left'); 
 const basketSumElem = document.querySelector('.basket-wrapper-right_sum'); 
 
 const installHandle = () =>{
@@ -195,6 +195,7 @@ const renderCardBasket = (cardBasket) =>{
     //кнопка удаления
     const basket_card_bottom_btnDel = document.createElement('button');
     basket_card_bottom_btnDel.classList.add('basket-wrapper-left-card-bottom_btnDel');
+    basket_card_bottom_btnDel.addEventListener('click', clickOnDeleteBasket);
     basket_card_bottom_btn.append(basket_card_bottom_btnDel);
 
     const basket_card_bottom_trash = document.createElement('i');

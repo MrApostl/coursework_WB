@@ -37,6 +37,7 @@ const setDate = (key, item) =>{
     }else{
         localStorage.setItem(key, JSON.stringify(item)); 
         renderMain();
+        renderMainBasket();
     }
 }
 

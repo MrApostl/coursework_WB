@@ -39,10 +39,27 @@ const clickOnDeleteCard = (event) =>{
     const elemCard = event.target.closest('.main-card');
 
     let masCards = getDate('cards');
-    let card = masCards.find((card) => card.id === +elemCard.id);
+    let masBasket = getDate('basket');
+    let card = masCards.find((card) => +card.id === +elemCard.id);
     masCards.splice(masCards.indexOf(card), 1);
 
     removeDate();
+    setDate('basket', masBasket);
+    setDate('cards', masCards);
+}
+
+const clickOnDeleteBasket = (event) =>{
+    event.preventDefault();
+    
+    const elemCard = event.target.closest('.basket-wrapper-left-card');
+
+    let masBasket = getDate('basket');
+    let masCards = getDate('cards');
+    let cardBasFind = masBasket.find((cardBas) => +cardBas.id === +elemCard.id);
+    masBasket.splice(masBasket.indexOf(cardBasFind), 1);
+
+    removeDate();
+    setDate('basket', masBasket);
     setDate('cards', masCards);
 }
 
@@ -68,7 +85,6 @@ const clickOnBuyCard = (event) =>{
     const elemCard   = event.target.closest('.main-card');
     const idValue    = elemCard.id;
     let {src: srcValue, title: titleValue, price: priceValue} = getDate('cards').find(elem => elem.id === +idValue);
-    console.log(srcValue, titleValue, priceValue);
 
     setDate('basket', {id:idValue, src:srcValue, title:titleValue, price:priceValue});
 }
@@ -105,4 +121,4 @@ const ChangeSearch = (event) =>{
 
 
 
-export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch, clickOnBuyCard}
+export {clickOnSeller, clickOnBuyer, clickOnAddCloseCard, clickOnAddClosebasket, clickOnAddCard, clickOnDeleteCard, clickOnSearch, ChangeSearch, clickOnBuyCard, clickOnDeleteBasket}

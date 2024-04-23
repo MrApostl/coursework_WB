@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {renderCard, renderMain} from './dom.js';
+import {renderMain, renderMainBasket} from './dom.js';
 
 const swiper = new Swiper('.swiper', {
   direction: 'horizontal',
@@ -13,3 +13,4 @@ const swiper = new Swiper('.swiper', {
 });
 
 renderMain();
+renderMainBasket();
